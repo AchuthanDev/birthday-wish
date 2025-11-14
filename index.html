@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Batty 💜</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="landing" class="section">
+        <canvas id="particles-canvas"></canvas>
+        <div class="landing-content">
+            <h1 class="landing-title">Happy Birthday Batty 💜</h1>
+            <p class="landing-subtitle">Scroll down for a special journey...</p>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="unlock-section" class="section">
+        <div class="unlock-container">
+            <h2 class="unlock-title">Before we go further…</h2>
+            <p class="unlock-hint">Can you unlock your surprise? 💜</p>
+            <p class="unlock-subhint">Hint: Your bias' birthday month 😉</p>
+            <div class="password-input-container">
+                <input type="text" id="password-input" class="password-input" placeholder="Enter the code..." maxlength="2">
+                <button id="unlock-btn" class="unlock-button">Unlock</button>
+            </div>
+            <div id="error-message" class="error-message hidden">Try again ;)</div>
+        </div>
+    </section>
+
+    <section id="entrance-section" class="section hidden">
+        <canvas id="hearts-canvas"></canvas>
+        <div class="entrance-content">
+            <div id="jk-silhouette" class="jk-silhouette"></div>
+            <h2 class="entrance-text">You unlocked your Golden Surprise 💜🧸</h2>
+            <button class="next-section-btn" id="entrance-next-btn">Next →</button>
+        </div>
+    </section>
+
+    <section id="slideshow-section" class="section hidden">
+        <div class="slideshow-container">
+            <h2 class="slideshow-title">He's here today…</h2>
+            <p class="slideshow-subtitle">Just to wish someone very special ❤️</p>
+            <div class="slideshow-wrapper">
+                <div class="slideshow-slide active">
+                    <img src="assets/jk-slideshow/Bts (1).jpg" alt="Jungkook" class="slideshow-image">
+                </div>
+                <div class="slideshow-slide">
+                    <img src="assets/jk-slideshow/Bts (1).png" alt="Jungkook" class="slideshow-image">
+                </div>
+                <div class="slideshow-slide">
+                    <img src="assets/jk-slideshow/Bts (1).webp" alt="Jungkook" class="slideshow-image">
+                </div>
+                <div class="slideshow-slide">
+                    <img src="assets/jk-slideshow/Bts (2).jpg" alt="Jungkook" class="slideshow-image">
+                </div>
+                <button class="slideshow-btn prev-btn" id="prev-btn">‹</button>
+                <button class="slideshow-btn next-btn" id="next-btn">›</button>
+            </div>
+            <div class="slideshow-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+            </div>
+            <button class="next-section-btn" id="slideshow-next-btn">Next →</button>
+        </div>
+    </section>
+
+    <section id="letter-section" class="section hidden">
+        <div class="letter-container">
+            <div class="letter-book">
+                <div class="letter-page">
+                    <div class="letter-content">
+                        <h2 class="letter-greeting">Dear Batty,</h2>
+                        <div class="letter-body">
+                            <p>On this beautiful day, I want you to smile a little extra.</p>
+                            <p>You deserve happiness the way BTS brings joy to millions.</p>
+                            <p>May your dreams shine brighter than purple lights.</p>
+                            <p>Happy Birthday! 💜✨</p>
+                        </div>
+                        <div class="letter-signature">
+                            <p>From: Achuthan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="next-section-btn" id="letter-next-btn">Next →</button>
+        </div>
+    </section>
+
+    <section id="gift-section" class="section hidden">
+        <div class="gift-container">
+            <h2 class="gift-instruction">Tap to reveal your surprise 🎁💜</h2>
+            <div class="gift-box" id="gift-box">
+                <div class="gift-box-top"></div>
+                <div class="gift-box-body">
+                    <div class="gift-bow"></div>
+                </div>
+            </div>
+            <canvas id="confetti-canvas"></canvas> 
+        </div>
+
+        <div id="gift-reveal" class="gift-reveal hidden">
+            <div class="reveal-content">
+                <div class="reveal-section video-section">
+                    <h3 class="reveal-title">A Special Video for You 💜</h3>
+                    <div class="custom-video-container">
+                        <video id="custom-video" class="custom-video" controls>
+                            <source src="assets/video/Birthday_Wish_Video_Generated.mp4" type="video/mp4">
+                            <source src="assets.video/your-video.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="video-note">💜 Add your custom video to: assets/video/Birthday_Wish_Video_Generated.mp4</p>
+                    </div>
+                </div>
+
+                <div class="reveal-section jk-message-section">
+                    <h3 class="reveal-title">A Message from Your Bias 💜🧸</h3>
+                    <div class="jk-message">
+                        <p class="jk-message-text">Hey Thuvaraka! 💜</p>
+                        <p class="jk-message-text">I heard it's your special day today! I wanted to send you some extra love and happiness. You're amazing, and I hope your birthday is filled with all the joy and purple moments you deserve!</p>
+                        <p class="jk-message-text">Keep shining bright like the ARMY you are! ✨</p>
+                        <p class="jk-message-signature">— With love, JK 💜</p>
+                    </div>
+                </div>
+
+                <div class="reveal-section personal-note-section">
+                    <h3 class="reveal-title">A Note from Me 💜</h3>
+                    <div class="personal-note">
+                        <p>Batty, you're the best friend anyone could ask for!</p>
+                        <p>I know how much BTS and especially Jungkook means to you, so I wanted to make this day extra special. I hope this surprise brings a huge smile to your face!</p>
+                        <p>Here's to another amazing year filled with purple moments, great music, and even better memories together! 🎉</p>
+                        <p class="personal-signature">— Your friend, Achuthan 💜</p>
+                    </div>
+                </div>
+            </div>
+            <button class="next-section-btn" id="gift-next-btn">Next →</button>
+        </div>
+
+        <div id="music-player" class="music-player">
+            <iframe id="youtube-player" 
+                    src="https://www.youtube.com/embed/djKdPZiJdvA?autoplay=1&mute=0&loop=1&playlist=djKdPZiJdvA&controls=0&enablejsapi=1&modestbranding=1" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <section id="outro-section" class="section hidden">
+        <canvas id="outro-icons-canvas"></canvas>
+        <div class="outro-content">
+            <div class="outro-icons-float">
+                <span class="outro-icon">💜</span>
+                <span class="outro-icon">⭐</span>
+                <span class="outro-icon">✨</span>
+                <span class="outro-icon">🎀</span>
+                <span class="outro-icon">🦋</span>
+                <span class="outro-icon">🧸</span>
+                <span class="outro-icon">🎁</span>
+                <span class="outro-icon">🎂</span>
+                <span class="outro-icon">🎈</span>
+                <span class="outro-icon">🎉</span>
+            </div>
+            <h2 class="outro-korean">친구야 생일 축하해 💜</h2>
+            <p class="outro-translation">(Happy Birthday my friend)</p>
+            <p class="outro-message">May your days be filled with purple moments.</p>
+            <p class="outro-signature">— From: Achuthan, the person who always wishes the best for you 💜</p>
+            <button class="restart-btn" id="restart-btn">Start Over ↺</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
