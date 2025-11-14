@@ -1,6 +1,7 @@
 // Global variables for timers and progression control
 let progressionTimers = [];
-let setupNextButtons = null; // Global function for next buttons (will be defined in initPasswordUnlock)
+let setupNextButtons = null; 
+let youtubeWasPlaying = false;// Global function for next buttons (will be defined in initPasswordUnlock)
 
 // Helper function to clear all section progression timers
 function clearProgressionTimers() {
@@ -219,6 +220,15 @@ function initPasswordUnlock() {
     function checkPassword() {
         const password = passwordInput.value.trim();
         if (password === '09' || password === '9') {
+            const youtubePlayer = document.getElementById('youtube-player');
+        if (youtubePlayer) {
+            try {
+                youtubePlayer.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
+                youtubeWasPlaying = true; // Set our tracker to true!
+            } catch (e) {
+                console.warn("Could not unmute player", e);
+            }
+        }
             errorMessage.classList.add('hidden');
             createConfetti(unlockSection);
             unlockSection.style.animation = 'shake 0.5s';
